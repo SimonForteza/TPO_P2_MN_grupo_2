@@ -23,14 +23,14 @@ public class Main {
         IStack stack3 = new Stack();
         stack3.add(3);
         stack3.add(2);
-        stack3.add(100);
+        stack3.add(1);
 
         IQueueOfStacks queue = new QueueOfStacks();
         queue.add(stack1);
         queue.add(stack2);
         queue.add(stack3);
 
-        System.out.println(Exercise_1.getTrace(queue));
-        //IQueueOfStacks transpose = Exercise_1.getTranpose(queue);
+        IQueueOfStacks transpose = Exercise_1.getTranpose(queue);
+        Exercise_1.printQueueOfStack(transpose);
     }
 }

@@ -23,54 +23,76 @@ public class Exercise_1 {
         return trace;
     }
 
-    private static IQueueOfStacks invertQueueOfStacks(IQueueOfStacks queue) {
-        IQueueOfStacks invertedQueue = new QueueOfStacks();
-        IStackOfStacks stack = new StackOfStacks();
-        while (!queue.isEmpty()) {
-            IStack first = queue.getFirst();
-            stack.add(first);
-            queue.remove();
-        }
-
-        while (!stack.isEmpty()) {
-            IStack top = stack.getTop();
-            invertedQueue.add(top);
-            stack.remove();
-        }
-        return invertedQueue;
-    }
-
-    /*
     public static IQueueOfStacks getTranpose(IQueueOfStacks queue) {
-        IQueueOfStacks transpose = new QueueOfStacks();
+        queue = invertQueueOfStacks(queue); // use invertQueueOfStacks to change que order of the queue
+
+        IQueueOfStacks transpose = new QueueOfStacks(); // queue that will be return
 
         while (!queue.isEmpty()) {
-            IQueueOfStacks aux = new QueueOfStacks();
-            IStack stack_transpose = new Stack();
 
-            IStack firstStack = queue.getFirst();
-            boolean isTopElement = true;
+            IStack first = queue.getFirst(); // first element of the queue
+            boolean isTopElement = true; // flag to know if the top element
 
-            while (!firstStack.isEmpty() && isTopElement == true) {
-                int top = firstStack.getTop();
-                firstStack.remove();
-                stack_transpose.add(top); // agrego elemento a la pila de transpues
+            IStack aux = new Stack();
+            while (!first.isEmpty() && isTopElement) {
+                int top = first.getTop(); // top element of the stack
+                aux.add(top);
+                first.remove();
                 isTopElement = false;
             }
+            aux = invertStack(aux);
+            transpose.add(aux);
 
-            transpose.add(stack_transpose);
-
-            aux.add(firstStack);
-            queue.remove();
-
-            while (!aux.isEmpty()) {
-                IStack first = aux.getFirst();
+            if (!first.isEmpty()) {
                 queue.add(first);
-                aux.remove();
             }
-        }
 
+            queue.remove();
+        }
         return transpose;
     }
-     */
+
+        //Auxiliary function
+        private static IQueueOfStacks invertQueueOfStacks (IQueueOfStacks queue){
+            IQueueOfStacks invertedQueue = new QueueOfStacks();
+            IStackOfStacks stack = new StackOfStacks();
+            while (!queue.isEmpty()) {
+                IStack first = queue.getFirst();
+                stack.add(first);
+                queue.remove();
+            }
+
+            while (!stack.isEmpty()) {
+                IStack top = stack.getTop();
+                invertedQueue.add(top);
+                stack.remove();
+            }
+            return invertedQueue;
+        }
+
+        private static IStack invertStack (IStack stack){
+            IStack inverted = new Stack();
+            while (!stack.isEmpty()) {
+                int top = stack.getTop();
+                inverted.add(top);
+                stack.remove();
+            }
+            return inverted;
+        }
+
+        public static void printQueueOfStack(IQueueOfStacks queue) {
+            while (!queue.isEmpty()) {
+                IStack first = queue.getFirst();
+                while (!first.isEmpty()) {
+                    System.out.println(first.getTop());
+                    first.remove();
+                }
+                queue.remove();
+            }
+
+
+
+        }
+
+
 }
