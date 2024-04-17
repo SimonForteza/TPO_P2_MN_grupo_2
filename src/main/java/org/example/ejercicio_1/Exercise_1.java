@@ -23,7 +23,7 @@ public class Exercise_1 {
         return trace;
     }
 
-    public static IQueueOfStacks getTranpose(IQueueOfStacks queue) {
+    public static IQueueOfStacks getTranspose(IQueueOfStacks queue) {
         queue = invertQueueOfStacks(queue); // use invertQueueOfStacks to change que order of the queue
 
         IQueueOfStacks transpose = new QueueOfStacks(); // queue that will be return
@@ -51,6 +51,33 @@ public class Exercise_1 {
         }
         return transpose;
     }
+
+
+    public static IQueueOfStacks matrixSum(IQueueOfStacks queue1, IQueueOfStacks queue2) {
+
+        IQueueOfStacks sum = new QueueOfStacks(); // this queue is the return of the matrix sum
+
+        while (!queue1.isEmpty()) {
+            IStack first1 = queue1.getFirst();
+            IStack first2 = queue2.getFirst();
+
+            IStack aux = new Stack();
+            while (!first1.isEmpty()) {
+                int sumTops = first1.getTop() + first2.getTop(); // sum the two tops
+                aux.add(sumTops);
+                first1.remove();
+                first2.remove();
+            }
+
+            aux = invertStack(aux);
+            sum.add(aux);
+
+            queue1.remove();
+            queue2.remove();
+        }
+        return sum;
+    }
+
 
         //Auxiliary function
         private static IQueueOfStacks invertQueueOfStacks (IQueueOfStacks queue){
