@@ -1,4 +1,4 @@
-package org.example.ejercicio_6;
+package org.example.ejercicio_6.punto_4;
 
 public interface ISet {
     void add(int a);

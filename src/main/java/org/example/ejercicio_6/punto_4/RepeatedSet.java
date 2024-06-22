@@ -1,8 +1,10 @@
-package org.example.ejercicio_6;
+package org.example.ejercicio_6.punto_4;
+
+import org.example.ejercicio_6.punto_4.ISet;
 
 import java.util.Random;
 
-public class RepeatedSet implements ISet{
+public class RepeatedSet implements ISet {
 
     public static final int MAX = 10000;
     private int[][] array; // array[0]: valor y array[1]: cantidad

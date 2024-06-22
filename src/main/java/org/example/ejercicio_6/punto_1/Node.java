@@ -1,4 +1,4 @@
-package org.example.ejercicio_6;
+package org.example.ejercicio_6.punto_1;
 
 public class Node {
 
