@@ -1,4 +1,6 @@
-package org.example.ejercicio_2;
+package org.example.ejercicio_2.genericTDA;
+
+import org.example.ejercicio_2.genericTDA.IStack;
 
 public class Stack<T> implements IStack<T> {
     private static final int MAX = 10000;

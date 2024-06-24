@@ -1,4 +1,6 @@
-package org.example.ejercicio_2;
+package org.example.ejercicio_2.genericTDA;
+
+import org.example.ejercicio_2.genericTDA.IPriorityQueue;
 
 public class PriorityQueue<T> implements IPriorityQueue<T> {
 

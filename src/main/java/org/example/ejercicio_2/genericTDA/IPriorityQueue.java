@@ -1,4 +1,4 @@
-package org.example.ejercicio_2;
+package org.example.ejercicio_2.genericTDA;
 
 public interface IPriorityQueue<T> {
 

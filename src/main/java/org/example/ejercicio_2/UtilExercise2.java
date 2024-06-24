@@ -1,5 +1,10 @@
 package org.example.ejercicio_2;
 
+import org.example.ejercicio_2.genericTDA.ISet;
+import org.example.ejercicio_2.genericTDA.IStack;
+import org.example.ejercicio_2.genericTDA.Set;
+import org.example.ejercicio_2.genericTDA.Stack;
+
 public class UtilExercise2 {
 
     //1

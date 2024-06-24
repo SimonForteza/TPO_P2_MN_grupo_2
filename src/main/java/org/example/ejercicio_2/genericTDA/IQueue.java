@@ -1,4 +1,4 @@
-package org.example.ejercicio_2;
+package org.example.ejercicio_2.genericTDA;
 
 /**
  *precondition: to use any of this methods the structure must be initialized
