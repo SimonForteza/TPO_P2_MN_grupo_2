@@ -1,7 +1,6 @@
 package org.example.ejercicio_2;
 
 public class Stack<T> implements IStack<T> {
-
     private static final int MAX = 10000;
     private T[] array;
     private int count;
