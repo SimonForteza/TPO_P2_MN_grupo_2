@@ -48,7 +48,4 @@ public class Exercise_5 {
         }
         return result;
     }
-
-    //2
-
 }
