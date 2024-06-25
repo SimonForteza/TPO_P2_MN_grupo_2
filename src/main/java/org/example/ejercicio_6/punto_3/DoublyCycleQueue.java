@@ -34,6 +34,7 @@ public class DoublyCycleQueue implements IQueue{
         first = first.getNext();
         first.setPrevious(last);
         last.setNext(first);
+        size--;
     }
 
     @Override
