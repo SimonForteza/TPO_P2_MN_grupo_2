@@ -3,26 +3,29 @@ package org.example.ejercicio_1;
 import org.example.ejercicio_1.tda.*;
 
 public class Exercise_1 {
-    public static int getTrace(IQueueOfStacks queue) {
-        queue = invertQueueOfStacks(queue);
-        int trace = 0;
-        int count = 1;
 
-        while (!queue.isEmpty()){
+    //1 - complexity: O(N^2)
+    public static int getTrace(IQueueOfStacks queue) { //O(N^2)
+        queue = invertQueueOfStacks(queue); //O(N)
+        int trace = 0; //O(1)
+        int count = 1; //O(1)
+
+        while (!queue.isEmpty()){ //O(N)
             IStack stack = queue.getFirst();
 
             int candidate = 0;
             for (int i = 0; i < count; i++) {
-                candidate = stack.getTop();
-                stack.remove();
+                candidate = stack.getTop(); //O(1)
+                stack.remove(); //O(1)
             }
-            trace += candidate;
-            queue.remove();
-            count++;
+            trace += candidate; //O(1)
+            queue.remove(); //O(1)
+            count++; //O(1)
         }
         return trace;
     }
 
+    //2 - Complexity: O(N^2)
     public static IQueueOfStacks getTranspose(IQueueOfStacks queue) {
         queue = invertQueueOfStacks(queue); // use invertQueueOfStacks to change que order of the queue
 
@@ -52,7 +55,7 @@ public class Exercise_1 {
         return transpose;
     }
 
-
+    //3 - Complexity: O(N^2)
     public static IQueueOfStacks matrixSum(IQueueOfStacks queue1, IQueueOfStacks queue2) {
 
         IQueueOfStacks sum = new QueueOfStacks(); // this queue is the return of the matrix sum
@@ -79,47 +82,42 @@ public class Exercise_1 {
     }
 
 
-        //Auxiliary function
-        private static IQueueOfStacks invertQueueOfStacks (IQueueOfStacks queue){
-            IQueueOfStacks invertedQueue = new QueueOfStacks();
-            IStackOfStacks stack = new StackOfStacks();
-            while (!queue.isEmpty()) {
-                IStack first = queue.getFirst();
-                stack.add(first);
-                queue.remove();
-            }
-
-            while (!stack.isEmpty()) {
-                IStack top = stack.getTop();
-                invertedQueue.add(top);
-                stack.remove();
-            }
-            return invertedQueue;
+    //Auxiliary function
+    private static IQueueOfStacks invertQueueOfStacks(IQueueOfStacks queue) { //O(N)
+        IQueueOfStacks invertedQueue = new QueueOfStacks();
+        IStackOfStacks stack = new StackOfStacks();
+        while (!queue.isEmpty()) {
+            IStack first = queue.getFirst();
+            stack.add(first);
+            queue.remove();
         }
 
-        private static IStack invertStack (IStack stack){
-            IStack inverted = new Stack();
-            while (!stack.isEmpty()) {
-                int top = stack.getTop();
-                inverted.add(top);
-                stack.remove();
-            }
-            return inverted;
+        while (!stack.isEmpty()) {
+            IStack top = stack.getTop();
+            invertedQueue.add(top);
+            stack.remove();
         }
+        return invertedQueue;
+    }
 
-        public static void printQueueOfStack(IQueueOfStacks queue) {
-            while (!queue.isEmpty()) {
-                IStack first = queue.getFirst();
-                while (!first.isEmpty()) {
-                    System.out.println(first.getTop());
-                    first.remove();
-                }
-                queue.remove();
-            }
-
-
-
+    private static IStack invertStack(IStack stack) { //O(N)
+        IStack inverted = new Stack(); //O(1)
+        while (!stack.isEmpty()) { //O(N)
+            int top = stack.getTop(); //O(1)
+            inverted.add(top); //O(1)
+            stack.remove(); //O(1)
         }
+        return inverted;
+    }
 
-
+    public static void printQueueOfStack(IQueueOfStacks queue) { //O(N^2)
+        while (!queue.isEmpty()) { //O(N)
+            IStack first = queue.getFirst(); //O(1)
+            while (!first.isEmpty()) { //O(N)
+                System.out.println(first.getTop()); //O(1)
+                first.remove(); //O(1)
+            }
+            queue.remove(); //O(1)
+        }
+    }
 }
