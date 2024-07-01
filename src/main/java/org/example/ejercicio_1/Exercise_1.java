@@ -25,32 +25,29 @@ public class Exercise_1 {
         return trace;
     }
 
+    /**
+     * Precondition: QueueOfStacks is NxN
+    */
     //2 - Complexity: O(N^2)
     public static IQueueOfStacks getTranspose(IQueueOfStacks queue) {
-        queue = invertQueueOfStacks(queue); // use invertQueueOfStacks to change que order of the queue
+        queue = invertQueueOfStacks(queue); // use invertQueueOfStacks to change que order of the queue - O(N)
+
+        int sizeQueue = sizeQueueOfStacks(queue); //O(N)
 
         IQueueOfStacks transpose = new QueueOfStacks(); // queue that will be return
 
-        while (!queue.isEmpty()) {
+        for (int i = 0; i < sizeQueue; i++) { // iterate the size of the queue
+            IStack transposeStack = new Stack();
 
-            IStack first = queue.getFirst(); // first element of the queue
-            boolean isTopElement = true; // flag to know if the top element
-
-            IStack aux = new Stack();
-            while (!first.isEmpty() && isTopElement) {
-                int top = first.getTop(); // top element of the stack
-                aux.add(top);
+            for (int j = 0; j < sizeQueue; j++) { // iterate each stack (size of stack == size of queue).
+                IStack first = queue.getFirst(); //get the first element of the queue
+                transposeStack.add(first.getTop()); //add the first element of each stack
                 first.remove();
-                isTopElement = false;
+                queue.add(first); // add the rest of element to the queue
+                queue.remove();
             }
-            aux = invertStack(aux);
-            transpose.add(aux);
-
-            if (!first.isEmpty()) {
-                queue.add(first);
-            }
-
-            queue.remove();
+            transposeStack = invertStack(transposeStack);
+            transpose.add(transposeStack);
         }
         return transpose;
     }
@@ -108,6 +105,22 @@ public class Exercise_1 {
             stack.remove(); //O(1)
         }
         return inverted;
+    }
+
+    private static int sizeQueueOfStacks(IQueueOfStacks queue) { //O(N)
+        IQueueOfStacks aux = new QueueOfStacks(); //O(1)
+        int size = 0; //O(1)
+        while (!queue.isEmpty()) {
+            size++; //O(1)
+            aux.add(queue.getFirst()); //O(1)
+            queue.remove(); //O(1)
+        }
+
+        while (!aux.isEmpty()) {
+            queue.add(aux.getFirst()); //O(1)
+            aux.remove(); //O(1)
+        }
+        return size; //O(1)
     }
 
     public static void printQueueOfStack(IQueueOfStacks queue) { //O(N^2)
