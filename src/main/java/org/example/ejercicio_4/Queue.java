@@ -2,16 +2,20 @@ package org.example.ejercicio_4;
 
 public class Queue implements IQueue {
 
+    private static final int MAX = 10000;
     private final int[] array;
     private int count;
 
     public Queue() {
-        this.array = new int[10000];
+        this.array = new int[MAX];
         this.count = 0;
     }
     public Queue(int... elements) { //constructor con parametros variables
-        this.array = new int[10000];
+        this.array = new int[MAX];
         this.count = 0;
+        if (elements.length > MAX) {
+            throw new RuntimeException("La cantidad de elementos sobrepasa el limite de la cola");
+        }
         for (int element : elements) {
             add(element);
         }
@@ -20,7 +24,7 @@ public class Queue implements IQueue {
 
     @Override
     public void add(int a) {
-        if (count == 10000) {
+        if (count == MAX) {
             throw new RuntimeException("La cola está llena");
         }
         array[count] = a;
