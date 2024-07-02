@@ -1,11 +1,11 @@
 package org.example.ejercicio_2.genericTDA;
 
-public interface IPriorityQueue<T> {
+public interface IPriorityQueue<T, P> {
 
-    void add(T a, int priority);
+    void add(T a, P priority);
     void remove();
     boolean isEmpty();
     T getFirst();
-    int getPriority();
+    P getPriority();
 
 }
