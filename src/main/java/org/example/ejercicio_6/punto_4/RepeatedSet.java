@@ -1,6 +1,6 @@
 package org.example.ejercicio_6.punto_4;
 
-import org.example.ejercicio_6.punto_4.ISet;
+import org.example.tda.ISet;
 
 import java.util.Random;
 

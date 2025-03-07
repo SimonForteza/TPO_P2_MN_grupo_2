@@ -1,5 +1,8 @@
 package org.example.ejercicio_1.tda;
 
+import org.example.tda.IStack;
+import org.example.tda.Stack;
+
 public class QueueOfStacks implements IQueueOfStacks{
 
     private final int MAX_VAlUE = 10000;

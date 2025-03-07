@@ -1,6 +1,8 @@
 package org.example.ejercicio_6.punto_3;
 
-public class DoublyCycleQueue implements IQueue{
+import org.example.tda.IQueue;
+
+public class DoublyCycleQueue implements IQueue {
 
     private DoublyNode first;
     private DoublyNode last;

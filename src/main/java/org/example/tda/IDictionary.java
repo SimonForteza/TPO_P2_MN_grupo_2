@@ -1,6 +1,6 @@
-package org.example.ejercicio_6.punto_5.auxiliarTDA;
+package org.example.tda;
 
-public interface ISimpleDictionary {
+public interface IDictionary {
     void add(int key, int value);
 
     void remove(int key);

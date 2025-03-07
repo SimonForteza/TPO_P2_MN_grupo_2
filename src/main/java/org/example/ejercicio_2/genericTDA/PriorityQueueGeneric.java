@@ -1,15 +1,13 @@
 package org.example.ejercicio_2.genericTDA;
 
-import org.example.ejercicio_2.genericTDA.IPriorityQueue;
-
-public class PriorityQueue<T, P extends Comparable<P>> implements IPriorityQueue<T, P> {
+public class PriorityQueueGeneric<T, P extends Comparable<P>> implements IPriorityQueueGeneric<T, P> {
 
     private static final int MAX_VALUES = 10000;
     private T[] values;
     private P[] priorities;
     private int count;
 
-    public PriorityQueue() {
+    public PriorityQueueGeneric() {
         values = (T[]) new Object[MAX_VALUES];
         priorities = (P[]) new Comparable[MAX_VALUES];
         count = 0;

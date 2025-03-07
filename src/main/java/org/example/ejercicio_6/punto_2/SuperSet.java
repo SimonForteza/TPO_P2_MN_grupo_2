@@ -1,7 +1,7 @@
 package org.example.ejercicio_6.punto_2;
 
-import org.example.ejercicio_6.punto_2.auxiliar_tda.ISet;
-import org.example.ejercicio_6.punto_2.auxiliar_tda.Set;
+import org.example.tda.ISet;
+import org.example.tda.Set;
 
 import java.util.Random;
 

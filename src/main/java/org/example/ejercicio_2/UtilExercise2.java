@@ -1,16 +1,16 @@
 package org.example.ejercicio_2;
 
-import org.example.ejercicio_2.genericTDA.ISet;
-import org.example.ejercicio_2.genericTDA.IStack;
-import org.example.ejercicio_2.genericTDA.Set;
-import org.example.ejercicio_2.genericTDA.Stack;
+import org.example.ejercicio_2.genericTDA.ISetGeneric;
+import org.example.ejercicio_2.genericTDA.IStackGeneric;
+import org.example.ejercicio_2.genericTDA.SetGeneric;
+import org.example.ejercicio_2.genericTDA.StackGeneric;
 
 public class UtilExercise2 {
 
     //1
-    public static <T> IStack<T> reverseStack(IStack<T> stack) {
-        IStack<T> reverseStack = new Stack<>();
-        IStack<T> aux = copyStack(stack);
+    public static <T> IStackGeneric<T> reverseStack(IStackGeneric<T> stack) {
+        IStackGeneric<T> reverseStack = new StackGeneric<>();
+        IStackGeneric<T> aux = copyStack(stack);
 
         while (!stack.isEmpty()) {
             reverseStack.add(stack.getTop());
@@ -25,9 +25,9 @@ public class UtilExercise2 {
         return reverseStack;
     }
 
-    private static <T> IStack<T> copyStack(IStack<T> stack) {
-        IStack<T> copy = new Stack<>();
-        IStack<T> copy2 = new Stack<>();
+    private static <T> IStackGeneric<T> copyStack(IStackGeneric<T> stack) {
+        IStackGeneric<T> copy = new StackGeneric<>();
+        IStackGeneric<T> copy2 = new StackGeneric<>();
 
 
         while (!stack.isEmpty()) {
@@ -50,9 +50,9 @@ public class UtilExercise2 {
     }
 
     //2
-    public static <T> ISet<T> copySet(ISet<T> set) {
-        ISet<T> copy = new Set<>();
-        ISet<T> aux = new Set<>();
+    public static <T> ISetGeneric<T> copySet(ISetGeneric<T> set) {
+        ISetGeneric<T> copy = new SetGeneric<>();
+        ISetGeneric<T> aux = new SetGeneric<>();
         while (!set.isEmpty()) {
             T element = set.choose();
             copy.add(element);

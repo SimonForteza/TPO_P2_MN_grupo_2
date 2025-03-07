@@ -1,4 +1,4 @@
-package org.example.ejercicio_5.auxiliarTDA;
+package org.example.ejercicio_5.monteCarlo;
 
 import org.example.ejercicio_5.monteCarlo.Coordinate;
 import org.example.ejercicio_5.monteCarlo.ISetOfCoordinates;

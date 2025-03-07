@@ -1,6 +1,6 @@
 package org.example.ejercicio_3;
 
-import org.example.ejercicio_3.auxiliarTDA.IQueue;
+import org.example.tda.IQueue;
 
 public interface IQueueOfQueue {
     void add(IQueue a);

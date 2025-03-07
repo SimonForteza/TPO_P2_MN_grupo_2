@@ -2,9 +2,9 @@ package org.example;
 
 import org.example.ejercicio_1.Exercise_1;
 import org.example.ejercicio_1.tda.IQueueOfStacks;
-import org.example.ejercicio_1.tda.IStack;
 import org.example.ejercicio_1.tda.QueueOfStacks;
-import org.example.ejercicio_1.tda.Stack;
+import org.example.tda.IStack;
+import org.example.tda.Stack;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

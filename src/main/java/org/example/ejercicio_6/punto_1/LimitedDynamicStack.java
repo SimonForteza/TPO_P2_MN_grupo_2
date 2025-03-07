@@ -1,5 +1,7 @@
 package org.example.ejercicio_6.punto_1;
 
+import org.example.tda.IStack;
+
 import java.util.Objects;
 
 public class LimitedDynamicStack implements IStack {

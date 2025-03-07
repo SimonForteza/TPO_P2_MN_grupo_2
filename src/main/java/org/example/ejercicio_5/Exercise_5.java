@@ -1,10 +1,10 @@
 package org.example.ejercicio_5;
 
 
-import org.example.ejercicio_5.auxiliarTDA.ISet;
-import org.example.ejercicio_5.auxiliarTDA.IStack;
-import org.example.ejercicio_5.auxiliarTDA.Set;
-import org.example.ejercicio_5.auxiliarTDA.Stack;
+import org.example.tda.ISet;
+import org.example.tda.IStack;
+import org.example.tda.Set;
+import org.example.tda.Stack;
 
 public class Exercise_5 {
     //1

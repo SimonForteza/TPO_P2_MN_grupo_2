@@ -1,9 +1,9 @@
 package org.example.ejercicio_3;
 
-import org.example.ejercicio_3.auxiliarTDA.IStack;
-import org.example.ejercicio_3.auxiliarTDA.Stack;
-import org.example.ejercicio_3.auxiliarTDA.IQueue;
-import org.example.ejercicio_3.auxiliarTDA.Queue;
+import org.example.tda.IStack;
+import org.example.tda.Stack;
+import org.example.tda.IQueue;
+import org.example.tda.Queue;
 import org.example.ejercicio_3.IQueueOfQueue;
 
 public class QueueOfQueue implements IQueueOfQueue {

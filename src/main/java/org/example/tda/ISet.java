@@ -1,4 +1,4 @@
-package org.example.ejercicio_5.auxiliarTDA;
+package org.example.tda;
 
 public interface ISet {
     void add(int a);

@@ -1,6 +1,6 @@
 package org.example.ejercicio_6.punto_5;
 
-import org.example.ejercicio_6.punto_5.auxiliarTDA.ISet;
+import org.example.tda.ISet;
 
 public interface IGraph {
     void inicializarGrafo();

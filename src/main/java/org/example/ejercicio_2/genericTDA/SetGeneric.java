@@ -1,19 +1,19 @@
-package org.example.ejercicio_5.auxiliarTDA;
+package org.example.ejercicio_2.genericTDA;
 
 import java.util.Random;
 
-public class Set implements ISet {
+public class SetGeneric<T> implements ISetGeneric<T> {
 
     public static final int MAX = 10000;
-    private int[] array;
+    private T[] array;
     private int count;
 
-    public Set() {
-        array = new int[MAX];
+    public SetGeneric() {
+        array = (T[]) new Object[MAX];
         count = 0;
     }
     @Override
-    public void add(int a) {
+    public void add(T a) {
         if (count == MAX) {
             throw new RuntimeException("Limite de elementos alcanzado");
         }
@@ -28,7 +28,7 @@ public class Set implements ISet {
     }
 
     @Override
-    public void remove(int a) {
+    public void remove(T a) {
 
         // Reemplazamos el elemento eliminado por el último elemento del array (no importa el orden de los elementos)
         for (int i = 0; i < count; i++) {
@@ -46,7 +46,7 @@ public class Set implements ISet {
     }
 
     @Override
-    public int choose() {
+    public T choose() {
         if (count == 0) {
             throw new RuntimeException("No se puede elegir un valor de un conjunto vació");
         }

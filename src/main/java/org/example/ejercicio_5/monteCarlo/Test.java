@@ -1,6 +1,8 @@
-package org.example.ejercicio_5.auxiliarTDA;
+package org.example.ejercicio_5.monteCarlo;
 
 import org.example.ejercicio_5.Exercise_5;
+import org.example.tda.IStack;
+import org.example.tda.Stack;
 
 public class Test {
     public static void main(String[] args) {

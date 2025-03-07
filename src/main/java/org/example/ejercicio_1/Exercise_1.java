@@ -1,6 +1,8 @@
 package org.example.ejercicio_1;
 
 import org.example.ejercicio_1.tda.*;
+import org.example.tda.IStack;
+import org.example.tda.Stack;
 
 public class Exercise_1 {
 

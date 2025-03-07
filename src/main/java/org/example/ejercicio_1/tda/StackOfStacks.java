@@ -1,5 +1,7 @@
 package org.example.ejercicio_1.tda;
 
+import org.example.tda.IStack;
+
 public class StackOfStacks implements IStackOfStacks{
 
     private static final int MAX = 10000;

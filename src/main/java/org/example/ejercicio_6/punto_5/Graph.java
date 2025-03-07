@@ -1,19 +1,19 @@
 package org.example.ejercicio_6.punto_5;
 
-import org.example.ejercicio_6.punto_5.auxiliarTDA.ISet;
-import org.example.ejercicio_6.punto_5.auxiliarTDA.ISimpleDictionary;
-import org.example.ejercicio_6.punto_5.auxiliarTDA.StaticDictionary;
+import org.example.tda.ISet;
+import org.example.tda.IDictionary;
+import org.example.tda.Dictionary;
 
 public class Graph implements IGraph{
     private static final int MAX_Nodes = 10;
 
     private float[][] adjacencyMatrix;
-    private ISimpleDictionary dictionary;
+    private IDictionary dictionary;
     private int totalNodes;
     @Override
     public void inicializarGrafo() {
         this.adjacencyMatrix = new float[MAX_Nodes][MAX_Nodes];
-        this.dictionary = new StaticDictionary();
+        this.dictionary = new Dictionary();
         this.totalNodes = 0;
     }
 

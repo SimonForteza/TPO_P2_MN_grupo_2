@@ -1,13 +1,13 @@
-package org.example.ejercicio_6.punto_5.auxiliarTDA;
+package org.example.tda;
 
-public class StaticDictionary implements ISimpleDictionary {
+public class Dictionary implements IDictionary {
 
     private static final int MAX = 10000;
 
     private int[][] array;
     private int count;
 
-    public StaticDictionary() {
+    public Dictionary() {
         this.array = new int[MAX][2];
         this.count = 0;
     }
@@ -41,8 +41,8 @@ public class StaticDictionary implements ISimpleDictionary {
     }
 
     @Override
-    public StaticSet getKeys() {
-        StaticSet set = new StaticSet();
+    public ISet getKeys() {
+        ISet set = new Set();
         for(int i = 0; i < count; i++) {
             set.add(this.array[i][0]);
         }

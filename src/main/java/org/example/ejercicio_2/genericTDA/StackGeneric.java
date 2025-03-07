@@ -1,12 +1,10 @@
 package org.example.ejercicio_2.genericTDA;
 
-import org.example.ejercicio_2.genericTDA.IStack;
-
-public class Stack<T> implements IStack<T> {
+public class StackGeneric<T> implements IStackGeneric<T> {
     private static final int MAX = 10000;
     private T[] array;
     private int count;
-    public Stack() {
+    public StackGeneric() {
         this.array = (T[]) new Object[MAX];
         this.count = 0;
     }

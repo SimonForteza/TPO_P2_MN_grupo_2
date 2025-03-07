@@ -1,17 +1,17 @@
-package org.example.ejercicio_3.auxiliarTDA;
+package org.example.ejercicio_2.genericTDA;
 
-public class Queue implements IQueue{
+public class QueueGeneric<T> implements IQueueGeneric<T> {
 
-    private final int[] array;
+    private final T[] array;
     private int count;
 
-    public Queue() {
-        this.array = new int[10000];
+    public QueueGeneric() {
+        this.array = (T[]) new Object[10000];
         this.count = 0;
     }
 
     @Override
-    public void add(int a) {
+    public void add(T a) {
         if (count == 10000) {
             throw new RuntimeException("La cola está llena");
         }
@@ -36,7 +36,7 @@ public class Queue implements IQueue{
     }
 
     @Override
-    public int getFirst() {
+    public T getFirst() {
         if (isEmpty()) {
             throw new RuntimeException("La pila está vacía");
         }
